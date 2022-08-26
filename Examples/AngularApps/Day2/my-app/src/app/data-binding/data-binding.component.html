@@ -1,0 +1,27 @@
+<div class = 'container'>
+    <h2>Databinding Demo!</h2>
+    <div>
+        <h3>Counter is: {{counter}}</h3>
+        <h3>IsDisabled is: {{isDisabled}}</h3>
+        <button [disabled] = 'isDisabled'>Toggle</button> &nbsp;
+        <button (click) = "handleEvent()">Increment Counter</button>
+        <div [hidden] = 'isDisabled'>
+            <p>Disappearing content</p>
+        </div>
+        <div *ngIf = 'isDisabled'>
+            <p>Content appears with if condition</p>
+        </div>
+        <div>
+            <input type = 'text' #tf1 (input) = 'handleInput(tf1.value)' />
+        </div>
+
+        <div>
+            <h3>Two way databinding</h3>
+            <input [(ngModel)] = "firstname"> <br />
+            <input [(ngModel)] = "firstname"> <br />
+            
+        </div>
+        <div [ngClass] = "{'redColor': isDisabled}">Some content</div>
+    </div>
+
+</div>

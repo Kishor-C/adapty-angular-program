@@ -1,0 +1,32 @@
+<div class = "container-fluid">
+    <h2>Directive Demo</h2>
+    <div>
+        Status: {{status}}, IsAvialable: {{isAvailable}}
+    </div>
+    <div *ngFor = "let p of products" >
+        <p>{{p}}</p>
+    </div>
+    <ul *ngIf = "status">
+        <li *ngFor = "let p of products">{{p}}</li>
+    </ul>
+    <div *ngIf = "userObject" class = "hello">
+        {{userObject | json}}
+    </div>
+    <table *ngIf = "users" class = "table">
+        <thead>
+            <tr>
+                <th>Name</th><th>Birthday</th><th>Balance</th><th>Gender</th>
+                <th>Uppercase</th><th>DateFormat</th>
+            </tr>
+        </thead>
+        <!-- Pipes is used to transform the output -->
+        <tbody>
+            <tr *ngFor = "let user of users">
+                <td>{{user.name | salutation: user.gender}}</td><td>{{user.birthday}}</td>
+                <td>{{user.balance | currency : 'JPY'}}</td><td>{{user.gender}}</td>
+                <td>{{user.name | uppercase}}</td>
+                <td>{{user.birthday | date: 'dd-MM-yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

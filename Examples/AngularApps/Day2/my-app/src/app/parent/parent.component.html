@@ -1,0 +1,8 @@
+<div class = "container">
+    <h2>Parent Component</h2>
+    <app-child [username] = "name" ></app-child>
+    <hr />
+    <div *ngFor = "let n of nameItems">
+        <app-child [username] = "n"></app-child>
+    </div>
+</div>
