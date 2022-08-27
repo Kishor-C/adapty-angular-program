@@ -1,8 +1,13 @@
 <div class = "container">
-    <h2>Parent Component</h2>
+    <h2>Parent to Child Communication</h2>
     <app-child [username] = "name" ></app-child>
     <hr />
     <div *ngFor = "let n of nameItems">
         <app-child [username] = "n"></app-child>
+    </div>
+    <h2>Child to Parent Communication</h2>
+    <div>
+        <p>Parent Count: {{parentCount}}</p>
+        <app-child (childEventProperty) = "parentCount = $event"></app-child>
     </div>
 </div>

@@ -1,0 +1,38 @@
+<div>
+    <h2>Form Builder</h2>
+    <form [formGroup] = "profileForm" (ngSubmit) = "handleForm()">
+        <div class = "form-group">
+            <label>
+                Firstname <input formControlName = "firstname" class = "form-control">
+            </label>
+            <div class = "alert alert-danger" [hidden] = "profileForm.controls['firstname'].valid">
+                Firstname is mandatory!
+            </div>
+        </div>
+        <div class = "form-group">
+            <label>
+                Lastname  <input formControlName = "lastname" class = "form-control">
+            </label>
+            <div class = "alert alert-danger" [hidden] = "profileForm.controls['lastname'].valid">
+                Lastname is mandatory!
+            </div>
+        </div>
+        <div class = "form-group">
+            <label>
+                Phone <input formControlName = "phone" class = "form-control">
+            </label>
+            <div class = "alert alert-danger" [hidden] = "profileForm.controls['phone'].valid">
+                Phone Number must be 10 digits
+            </div>
+        </div>
+        <div>
+            <input type = "submit" value = "Save" class = "btn btn-primary" [disabled] = "profileForm.invalid">
+        </div>
+    </form>
+    <div>
+        <h3>Profile Value in JSON Format</h3>
+        {{profileForm.value | json}}
+        <h4>Particular Control</h4>
+        Firstname: {{profileForm.controls['firstname'].value}}
+    </div>
+</div>

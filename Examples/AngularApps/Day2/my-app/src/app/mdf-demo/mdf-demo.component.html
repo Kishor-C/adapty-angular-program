@@ -1,0 +1,22 @@
+<div>
+    <h2>Simple Form Control</h2>
+    <!-- Add ReactiveFormsModule in the imports of @NgModule -->
+    <form>
+        <label>
+            Firstname <input [formControl] = "firstname">
+        </label>
+        <br />
+        <label>
+            Lastname <input [formControl] = "lastname">
+        </label>
+        <br />
+    </form>
+    <div>
+        <p>Firstname is valid: {{firstname.valid}}</p>
+    </div>
+
+    <hr />
+    Firstname: {{firstname | json}}
+    <hr />
+    Lastname: {{lastname | json}}
+</div>

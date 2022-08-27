@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -10,7 +10,11 @@ export class ChildComponent {
   @Input()
   username = "Sachin";
 
-  @Input()
-  age = 10;
+  @Output()
+  childEventProperty: EventEmitter<number> = new EventEmitter<number>();
+  // this is automatically called after the component is loaded into the DOM
+  ngOnInit() {
+    this.childEventProperty.emit(250);
+  } 
 
 }

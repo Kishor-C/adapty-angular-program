@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent  {
   name = "Sourav";
 
-  nameItems = ["Virat", "Suraj", "Mohit", "Sony"]
+  nameItems = ["Virat", "Suraj", "Mohit", "Sony"];
+
+  parentCount : number = 0;
  
 }

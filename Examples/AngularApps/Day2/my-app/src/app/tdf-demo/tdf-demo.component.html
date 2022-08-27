@@ -1,0 +1,40 @@
+<div class = "container">
+    <h2>Template Driven Form</h2>
+    <form #user = "ngForm" (ngSubmit) = "handleForm(user.value)">
+        <label>
+            Firstname: 
+            <!-- [(ngModel)] initializes form property and component property-->
+            <input type = "text" autocomplete = "off" 
+                name = "fn" [(ngModel)] = "firstname"  #tf1 = "ngModel" minlength="3"  required>
+        </label>
+        <span class = "text-danger" [hidden] = "tf1.valid || tf1.pristine">
+            Firstname is mandatory and it must be minimum 3 characters
+        </span>
+        <br />
+        <label>
+            <!-- ngModel initializes form property -->
+            Lastname: 
+            <input type = "text" autocomplete = "off" ngModel name = "ln" #tf2 = "ngModel" required minlength="2">
+        </label>
+        <span class = "text-danger" [hidden] = "tf2.valid || tf2.pristine">
+            Lastname is mandatory and it must be minimum 2 characters
+        </span>
+        <br />
+        <label>
+            Birthday:
+            <input type = "date" name = "dob" [(ngModel)] = "dob"  #tf3>
+        </label>
+        <br />
+        <!-- Disable the submit button if the entier form is invalid -->
+        <input type = "submit" value = "Save" [disabled] = "user.invalid">
+    </form>
+    <div>
+       User Information: {{firstname}} {{lastname}} {{dob}}
+       <div>
+           <h3>Form Validation</h3>
+           <p>TF1 value: {{tf1.value}}, TF2 value: {{tf2.value}}</p>
+           <p>TF1 valid: {{tf1.valid}}, TF2 valid: {{tf2.valid}}</p>
+           <p>TF1 pristine: {{tf1.pristine}}</p>
+       </div>
+    </div>
+</div>
