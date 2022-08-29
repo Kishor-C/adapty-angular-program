@@ -1,0 +1,17 @@
+<div>
+    <h2>Parent Component</h2>
+    <div>
+        <form>
+            Enter Name: 
+                <input type = "text" #tf1> <br />
+            Select Gender:  
+                <input type = "radio" name = "g" #tf2>Male 
+                <input type = "radio" name = "g" #tf2>Female 
+            <br />
+        </form>
+    </div>
+    <div>
+        <h3>Child Counter: {{counter2parent}}</h3>
+        <app-child #childCmp></app-child>
+    </div>
+</div>

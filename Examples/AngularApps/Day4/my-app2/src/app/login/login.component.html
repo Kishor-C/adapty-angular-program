@@ -1,0 +1,18 @@
+<div>
+    <h2>Login Component</h2>
+    <form [formGroup] = 'loginForm' (ngSubmit) = 'handleSubmit()'>
+        <div>
+            <label>
+                Username <input type = 'text' formControlName = 'username'>
+            </label>
+        </div>
+        <div>
+            <label>
+                Password <input type = 'password' formControlName = 'password'>
+            </label>
+        </div>
+        <div>
+            <input type = 'submit' value = 'Login'>
+        </div>
+    </form>
+</div>

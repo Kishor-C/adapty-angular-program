@@ -1,0 +1,31 @@
+<div>
+    <h2>Registration Form</h2>
+    <div>
+        <form [formGroup] = 'userForm' (ngSubmit) = 'handleSubmit()'>
+            <div>
+                <label>
+                    Username <input formControlName = 'username'>
+                </label>
+            </div>
+            <div>
+                <label>
+                    Password <input type = 'password' formControlName = 'password'>
+                </label>
+            </div>
+            <div>
+                <label>
+                    Gender <input type = 'radio' value = 'Male' formControlName = 'gender'>M 
+                        <input type = 'radio' value = 'Female' formControlName = 'gender'>F
+                </label>
+            </div>
+            <div>
+                <label>
+                    Phone <input type = 'number' formControlName = 'phone'>
+                </label>
+            </div>
+            <div>
+                <input type = 'submit' value = 'Register'>
+            </div>
+        </form>
+    </div>
+</div>
