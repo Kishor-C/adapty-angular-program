@@ -1,0 +1,9 @@
+{
+    "users" : [
+        {"id":1, "username":"alex", "password":"1234", "gender":"M", "phone":"9393930" },
+        {"id":2, "username":"bruce", "password":"1234", "gender":"M", "phone":"9393660" },
+        {"id":3, "username":"sony", "password":"1234", "gender":"F", "phone":"9000660" },
+        {"id":4, "username":"katty", "password":"1234", "gender":"f", "phone":"9393110" },
+        {"id":5, "username":"david", "password":"1234", "gender":"M", "phone":"9393220" } 
+    ]
+}

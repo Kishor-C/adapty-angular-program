@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SuccessComponent } from './success/success.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {path : '', component: LoginComponent},
@@ -18,7 +19,11 @@ const routes: Routes = [
     {path : 'profile', component: ProfileComponent},
     {path: 'settings', component: SettingsComponent}
   ]},
-  {path: 'parent', component: ParentComponent}
+  {path: 'parent', component: ParentComponent},
+  {path: 'users', component: UsersComponent},
+  
+  { path: 'one', 
+   loadChildren: () => import('./one/one.module').then(m => m.OneModule) }
   
 ];
 

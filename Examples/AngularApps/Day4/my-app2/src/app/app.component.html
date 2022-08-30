@@ -1,10 +1,15 @@
 <div>
   <h2>Angular Root Component</h2>
   <div>
+    <hr />
+    <button (click) = "handleClick()">ClickToCheck</button>
+    <hr />
     <a routerLink = "login">Login</a> &nbsp; /
     <a routerLink = "register">Register</a> &nbsp; /
     <a routerLink = "success">Success</a> &nbsp; /
-    <a routerLink = "parent">Parent</a>
+    <a routerLink = "parent">Parent</a> &nbsp; /
+    <a routerLink = "users">Users</a> &nbsp; /
+    <a routerLink = "one">LazyLoading</a>
   </div>
   <router-outlet></router-outlet>
 </div>
